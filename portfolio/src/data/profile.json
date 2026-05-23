@@ -1,0 +1,25 @@
+{
+  "name": "Athallazhafran Tominuku Kendraya",
+  "shortName": "Athallazhafran",
+  "title": "Student taking on the major of Software and Game Development.",
+  "tagline": "Building interactive experiences at the intersection of code, design, and play.",
+  "location": "Bekasi, Indonesia",
+  "email": "zisbest2010@gmail.com",
+  "cvPath": "/cv.pdf",
+  "avatar": "/photos/Me.png",
+  "avatarPlaceholder": "/placeholders/avatar-placeholder.svg",
+  "socials": {
+    "github": "https://github.com/Zhafran-art",
+    "linkedin": "https://www.linkedin.com/in/athallazhafran01/",
+    "email": "mailto:zisbest2010@gmail.com"
+  },
+  "bio": "I'm a Software and Game Development student at SMK Skill Village Islamic School, passionate about full-stack web development and UI/UX design. I love crafting interfaces that feel alive—combining clean code with thoughtful motion and playful interactions.",
+  "terminalLines": [
+    "$ whoami",
+    "athallazhafran@portfolio",
+    "$ cat skills.txt",
+    "HTML, CSS, JavaScript, React, Figma",
+    "$ npm run build-dreams",
+    "Compiling creativity... done ✓"
+  ]
+}

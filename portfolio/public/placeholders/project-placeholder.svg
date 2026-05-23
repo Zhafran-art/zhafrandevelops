@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="#12121a"/>
+  <rect width="640" height="360" fill="url(#g)"/>
+  <text x="320" y="180" text-anchor="middle" font-family="monospace" font-size="18" fill="#94a3b8">Project Preview</text>
+</svg>

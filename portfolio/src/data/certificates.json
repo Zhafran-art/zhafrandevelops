@@ -1,0 +1,16 @@
+{
+  "filters": ["All", "Certificates", "Awards", "Competitions"],
+  "items": [
+    { "id": "cert-1", "name": "The Complete JavaScript Course 2025", "issuer": "Udemy", "date": "November 28, 2025", "link": "https://www.udemy.com/certificate/UC-c7019066-6a11-4f1e-9683-99ed749fb8a7/", "credentialId": "", "type": "Certificates" },
+    { "id": "cert-2", "name": "Learn the Fundamentals of Both HTML and CSS", "issuer": "Codepolitan", "date": "September 18, 2025", "link": "https://www.codepolitan.com/c/V0IIG3N/", "credentialId": "", "type": "Certificates" },
+    { "id": "cert-3", "name": "Learn the Fundamentals of JavaScript", "issuer": "Codepolitan", "date": "September 18, 2025", "link": "https://www.codepolitan.com/c/XEXC3FE/", "credentialId": "", "type": "Certificates" },
+    { "id": "cert-4", "name": "Learning the Fundamentals of Git", "issuer": "Codepolitan", "date": "September 22, 2025", "link": "https://www.codepolitan.com/c/LMV4GWQ/", "credentialId": "", "type": "Certificates" },
+    { "id": "cert-5", "name": "The Best Speaker of The Month", "issuer": "SMP IDN Boarding School", "date": "December 1, 2024", "link": "https://drive.google.com/drive/folders/1spFbjuloqlWnYKtEGGFv8QbbDuGWmoFP?usp=sharing", "credentialId": "", "type": "Awards" },
+    { "id": "cert-6", "name": "1st Place Story Telling", "issuer": "Especto 9th", "date": "October 23, 2022", "link": "#", "credentialId": "", "type": "Competitions" },
+    { "id": "cert-7", "name": "3rd Place English Speech", "issuer": "E-Flash", "date": "February 15, 2023", "link": "#", "credentialId": "", "type": "Competitions" },
+    { "id": "cert-8", "name": "1st Place Story Telling", "issuer": "Alacazam", "date": "October 19, 2024", "link": "#", "credentialId": "", "type": "Competitions" },
+    { "id": "cert-9", "name": "2nd Place English Speech", "issuer": "Icomfest", "date": "February 1, 2025", "link": "#", "credentialId": "", "type": "Competitions" },
+    { "id": "cert-10", "name": "2nd Place English Speech", "issuer": "Shixpo", "date": "February 8, 2025", "link": "#", "credentialId": "", "type": "Competitions" },
+    { "id": "cert-11", "name": "1st Place Story Telling", "issuer": "NH Spark", "date": "February 14, 2025", "link": "#", "credentialId": "", "type": "Competitions" }
+  ]
+}

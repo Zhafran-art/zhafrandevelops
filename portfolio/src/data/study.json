@@ -1,0 +1,42 @@
+{
+  "current": {
+    "institution": "SMK Skill Village Islamic School",
+    "program": "Software and Game Development",
+    "focusAreas": ["Full-Stack Development", "UI/UX Design", "React", "Game Logic"],
+    "expectedCompletion": "2025",
+    "progress": 72,
+    "modules": [
+      { "name": "Web Fundamentals", "completed": true },
+      { "name": "JavaScript & DOM", "completed": true },
+      { "name": "React & SPA Architecture", "completed": false },
+      { "name": "UI/UX & Prototyping", "completed": false },
+      { "name": "Game Development Basics", "completed": false }
+    ],
+    "semesterGoals": [
+      "Ship 2 portfolio-grade web projects",
+      "Complete React module with state management patterns",
+      "Design and prototype a game UI in Figma"
+    ],
+    "syllabusTopics": ["HTML/CSS", "JavaScript ES6+", "React", "REST APIs", "Figma", "Unity basics"]
+  },
+  "timeline": [
+    {
+      "year": "2022 - 2025",
+      "title": "Started Junior High School",
+      "institution": "SMP IDN Boarding School",
+      "description": "Entered Software and Game Development program with focus on web technologies."
+    },
+    {
+      "year": "2025 - 2026",
+      "title": "Started Senior High School",
+      "institution": "SMK IDN Boarding School",
+      "description": "Deepened skills in JavaScript, UI/UX with Figma, and collaborative school projects."
+    },
+    {
+      "year": "2026",
+      "title": "Current - Senior High School",
+      "institution": "SMK Skill Village Islamic School",
+      "description": "Building portfolio projects, React applications, and preparing for industry internships."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "skills": [
+    { "name": "HTML", "level": 9, "category": "frontend" },
+    { "name": "CSS", "level": 9, "category": "frontend" },
+    { "name": "JavaScript", "level": 7, "category": "frontend" },
+    { "name": "React.js", "level": 5, "category": "frontend" },
+    { "name": "Figma", "level": 8, "category": "design" }
+  ]
+}

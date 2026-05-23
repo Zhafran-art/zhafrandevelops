@@ -1,0 +1,98 @@
+{
+  "filters": ["All", "Web", "School", "Personal"],
+  "projects": [
+    {
+      "id": "MyPortfolio",
+      "name": "My Portfolio Transition ",
+      "description": "My Old Portfolio, The first ever thing i made when i was Junior High School.",
+      "longDescription": "This is My Old Portfolio, The first ever thing i made when i was Junior High School, It holds properties like HTML, CSS, & JavaScript. This shows how signifacantly improved over the years & hopefully keep on improving.",
+      "tech": ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Tailwind"],
+      "category": "Personal",
+      "demo": "https://portefeuille-atk.vercel.app",
+      "repo": "https://github.com/Zhafran-art/portfolio",
+      "thumbnail": "/placeholders/OldPortfolio.png",
+      "featured": true,
+      "challenges": "The challenge with remaking my portfolio was more of what i was going to make, About what theme i want to make it look like, And what do i want My Portfolio to have.",
+      "learnings": "But of course, In the end i have overcome this challenge by making it look uniqe with it's Color Palette selection, And also it's beautiful animations with React.",
+      "role": "Full-Stack Developer",
+      "timeline": "2026",
+      "beforeImage": "/placeholders/OldPortfolio.png",
+      "afterImage": "/placeholders/NewPortfolio.png",
+      "caseStudy": {
+        "problem": "The problem with my previous Portfolio was that it was to empty, You do get the minimalist vibe of it, But there's not much interaction in it, Not much life in the website, And i am a programmer that make things feel real.",
+        "approach": "And so my approach was rather over-the-top, I diverged from the original color-Palette of Beige and Brown, To a much more appealing color which was Maroon and Beige, And then i added the 'Life' i was talking about using React.Js.",
+        "outcome": "This project ended in a wonderous outcame, Being able to teach me the fundamentals of React.js and proving to the world that this is what progressive growth is."
+      }
+    },
+    {
+      "id": "Jersey25",
+      "name": "Jersey25",
+      "description": "A dummy company profile website about being able to create your own jersey.",
+      "longDescription": "Complete brand identity design for a personal business that sells uniqe but Aesthetic Jerseys, The number 25 signifies the Grace and Glory it took to make this amazing shop.",
+      "tech": ["HTML", "CSS", "JavaScript"],
+      "category": "School",
+      "demo": "https://jersey25.vercel.app",
+      "repo": "https://github.com/Zhafran-art/Jersey25",
+      "thumbnail": "/placeholders/Jersey25.png",
+      "featured": false,
+      "challenges": "One of the challenges I faced while creating Jersey25 was designing a brand that looked both unique and aesthetic while still matching the sporty jersey theme. I also struggled with building interactive features like the product selector and shopping cart using JavaScript.",
+      "learnings": "Through the Jersey25 project, I learned how to create a consistent and aesthetic brand design while improving my web development skills. I also learned to use JavaScript to build interactive features like a custom style selector and a shopping cart that automatically calculates the total price."
+    },
+    {
+      "id": "Starless.co",
+      "name": "Starless.co",
+      "description": "A company profile template i created with the goals of learning a new feature",
+      "longDescription": "A One-Of-A-Kind Website that talks about amazing Streetstyle Fashion with items that can fill your wardrobe from top-to-bottom, Meet the brand that showcases out of this World. In this project i also learned some new features like Light and Dark mode, And also Mini Menu selector.",
+      "tech": ["HTML","CSS", "JavaScript"],
+      "category": "Personal",
+      "demo": "https://starless.vercel.app",
+      "repo": "https://github.com/Zhafran-art/Starless",
+      "thumbnail": "/placeholders/Starless.co.png",
+      "featured": false,
+      "challenges": "The challenges that i faced when building Starless was quite a number, Since i wanted to implement new things that are different to projects that i have created before, Since this was a brand using the theme of 'Stars', It was difficult to get the perfect theme effect for it.",
+      "learnings": "Through building Starless.co, I learned how to create interactive website features using JavaScript, such as a product menu selector that helps users browse items more easily and a Light Mode & Dark Mode feature that changes the website's appearance dynamically. This project also improved my creativity and understanding of user-friendly web design."
+    },
+    {
+      "id": "Mentora",
+      "name": "Mentora",
+      "description": "A project born from the UI/UX project of my team for a competition.",
+      "longDescription": "A website dedicated to help people find their dream Scholarship, At first it was a simple uniqe UI/UX Project with my team, But i decided it deserved a website, And so Mentora Web Version was created, It also showcases the UI Screens i made with my team aswell. ",
+      "tech": ["Figma", "HTML", "CSS", "JavaScript"],
+      "category": "Web",
+      "demo": "https://mentora-seven-lake.vercel.app",
+      "repo": "https://github.com/Zhafran-art/Mentora",
+      "thumbnail": "/placeholders/Mentora.png",
+      "featured": false,
+      "challenges": "One of the biggest challenges while developing Mentora was creating a platform with many features that still felt simple and easy to use. I also learned how to design a modern UI/UX and build responsive layouts for both website and mobile platforms.",
+      "learnings": "Through developing Mentora, I learned how to research user experience (UX) to better understand what students need from a scholarship platform. I also improved my skills in creating impactful and modern UI designs that are both visually appealing and easy to navigate, while learning how to balance functionality with user comfort."
+    },
+    {
+      "id": "IDN Report",
+      "name": "IDN Report",
+      "description": "A online report system created with the goal of making reports easier.",
+      "longDescription": "A online report system i created as a school project, This project was also created with the goal of learning and understanding Bootstrap & Tailwind, A extra feature to make coding CSS much more interactive with fresh animations and other positive impacts",
+      "tech": ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind"],
+      "category": "School",
+      "demo": "e-report-six.vercel.app",
+      "repo": "https://github.com/Zhafran-art/E-report",
+      "thumbnail": "/placeholders/IDNReport.png",
+      "featured": false,
+      "challenges": "The challenge that i faced when creating IDN Report was a software issue since it was my first ever project using both Tailwind and Bootstrap, Since i was natively using CSS more and this was a first, So i had to undestand more about Tailwind and Bootstrap.",
+      "learnings": "But from that challenge, I have obtained new skills on the way, Such as both Bootstrap and Tailwind, Now i can more flexibly use CSS in a more interactive and animated way, And from this project i also learned of the countless animations these softwares both have, Such as Fade-In or Fade-Out, Pop-In or Pop-out, And etcetera."
+    },
+    {
+      "id": "IDN Cart",
+      "name": "IDN Cart",
+      "description": "A digital school canteen created by students to showcase their menus",
+      "longDescription": "This website is a digital school canteen run by students, for students. We offer a new experience for purchasing food and drinks within the school environment—fast, convenient, and modern—through a web-based system, It not only gives a positive impact, But also fills the stomach to the core.",
+      "tech": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      "category": "School",
+      "demo": "https://idn-cafe.vercel.app",
+      "repo": "https://github.com/Zhafran-art/idn-cart",
+      "thumbnail": "/placeholders/IDNCart.png",
+      "featured": false,
+      "challenges": "The challenge I faced when creating IDN Canteen was a technical issue, since it was my first project using both Tailwind and Bootstrap. I was originally more comfortable with plain CSS, so I had to learn how Tailwind and Bootstrap worked together.",
+      "learnings": "What I learned from creating IDN Canteen was how to adapt to new tools quickly, since it was my first time combining Tailwind and Bootstrap in one project. I was used to writing custom CSS, so this taught me to work more efficiently with utility-first frameworks and component libraries."
+    }
+  ]
+}
