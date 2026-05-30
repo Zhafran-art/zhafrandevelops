@@ -3,13 +3,14 @@ import { motion, useSpring, useTransform } from 'framer-motion'
 import { User } from 'lucide-react'
 import profile from '@/data/profile.json'
 import { useApp } from '@/context/AppContext'
+import { assetUrl } from '@/lib/assetUrl'
 import type { Profile } from '@/types'
 
 const data = profile as Profile
 
 export function HeroScene() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [imageSrc, setImageSrc] = useState(data.avatarPlaceholder)
+  const [imageSrc, setImageSrc] = useState(assetUrl(data.avatarPlaceholder))
   const [showPhotoHint, setShowPhotoHint] = useState(true)
   const { reducedMotion } = useApp()
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
@@ -22,10 +23,10 @@ export function HeroScene() {
   useEffect(() => {
     const img = new Image()
     img.onload = () => {
-      setImageSrc(data.avatar)
+      setImageSrc(assetUrl(data.avatar))
       setShowPhotoHint(false)
     }
-    img.src = data.avatar
+    img.src = assetUrl(data.avatar)
   }, [])
 
   const onPointerMove = (e: React.PointerEvent) => {
@@ -119,7 +120,7 @@ export function HeroScene() {
             </div>
             <p className="font-mono text-xs text-[var(--text-muted)] max-w-[14rem] leading-relaxed">
               Add your photo at{' '}
-              <span className="text-[var(--accent)]">public/photos/avatar.jpg</span>
+              <span className="text-[var(--accent)]">public/photos/Me.png</span>
             </p>
           </div>
         )}

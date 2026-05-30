@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { assetUrl } from '@/lib/assetUrl'
 
 interface BeforeAfterSliderProps {
   before: string
@@ -35,10 +36,10 @@ export function BeforeAfterSlider({
       aria-valuemin={0}
       aria-valuemax={100}
     >
-      <img src={after} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      <img src={assetUrl(after)} alt={afterLabel} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       <div className="absolute inset-0 overflow-hidden" style={{ width: `${position}%` }}>
         <img
-          src={before}
+          src={assetUrl(before)}
           alt={beforeLabel}
           className="absolute inset-0 h-full max-w-none object-cover"
           style={{ width: containerRef.current?.offsetWidth ?? 800 }}

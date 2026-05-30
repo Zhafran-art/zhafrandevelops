@@ -73,7 +73,7 @@
       "longDescription": "A online report system i created as a school project, This project was also created with the goal of learning and understanding Bootstrap & Tailwind, A extra feature to make coding CSS much more interactive with fresh animations and other positive impacts",
       "tech": ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind"],
       "category": "School",
-      "demo": "e-report-six.vercel.app",
+      "demo": "https://e-report-six.vercel.app",
       "repo": "https://github.com/Zhafran-art/E-report",
       "thumbnail": "/placeholders/IDNReport.png",
       "featured": false,

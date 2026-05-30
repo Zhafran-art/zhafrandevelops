@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, Code2 } from 'lucide-react'
+import { assetUrl } from '@/lib/assetUrl'
 import type { Project } from '@/types'
+
+const FALLBACK_THUMB = '/placeholders/project-placeholder.svg'
 
 interface ProjectCardProps {
   project: Project
@@ -21,12 +24,15 @@ export function ProjectCard({ project, onOpen }: ProjectCardProps) {
     >
       <div className="aspect-video bg-gradient-to-br from-[var(--accent)]/20 to-[var(--accent-secondary)]/10 relative overflow-hidden">
         <img
-          src={project.thumbnail}
+          src={assetUrl(project.thumbnail)}
           alt=""
           className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
           onError={(e) => {
-            (e.target as HTMLImageElement).style.display = 'none'
+            const img = e.target as HTMLImageElement
+            if (img.dataset.fallbackApplied) return
+            img.dataset.fallbackApplied = 'true'
+            img.src = assetUrl(FALLBACK_THUMB)
           }}
         />
         {project.featured && (

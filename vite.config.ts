@@ -5,7 +5,8 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: process.env.VITE_BASE_PATH || "/z.develop",
+  // Vercel: `/` (default). GitHub Pages subpath: set VITE_BASE_PATH=/z.develop/ in CI.
+  base: process.env.VITE_BASE_PATH || '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

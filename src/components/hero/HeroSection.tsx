@@ -4,6 +4,7 @@ import { Code2, Briefcase, Mail, MapPin, Download } from 'lucide-react'
 import profile from '@/data/profile.json'
 import { MagneticButton } from '@/components/ui/MagneticButton'
 import { HeroScene } from '@/components/hero/HeroScene'
+import { assetUrl } from '@/lib/assetUrl'
 import type { Profile } from '@/types'
 
 const data = profile as Profile
@@ -115,7 +116,7 @@ export function HeroSection() {
             <MagneticButton variant="primary" onClick={() => scrollTo('projects')}>
               View Projects
             </MagneticButton>
-            <MagneticButton variant="outline" href={data.cvPath} className="gap-2">
+            <MagneticButton variant="outline" href={assetUrl(data.cvPath)} className="gap-2">
               <Download size={18} />
               Download CV
             </MagneticButton>
