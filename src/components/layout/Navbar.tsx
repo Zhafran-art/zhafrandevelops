@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Volume2, VolumeX, Terminal } from 'lucide-react'
 import { useApp } from '@/context/AppContext'
-import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher'
+import { PaletteSwitcher } from '@/components/ui/PaletteSwitcher'
 
 const NAV = [
   { id: 'hero', label: 'Home' },
@@ -89,7 +89,7 @@ export function Navbar() {
         </ul>
 
         <motion.div className="flex items-center gap-2">
-          <ThemeSwitcher />
+          <PaletteSwitcher />
           <button
             type="button"
             onClick={toggleSound}

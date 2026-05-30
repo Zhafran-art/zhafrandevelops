@@ -7,11 +7,24 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import type { ThemeId } from '@/types'
+import { PALETTE_STORAGE_KEY } from '@/data/palettes'
+import type { PaletteId } from '@/types'
+
+function isPaletteId(value: string | null): value is PaletteId {
+  return value === 'crimson' || value === 'emerald' || value === 'violet'
+}
+
+function readStoredPalette(): PaletteId | null {
+  if (typeof window === 'undefined') return null
+  const stored = localStorage.getItem(PALETTE_STORAGE_KEY)
+  return isPaletteId(stored) ? stored : null
+}
 
 interface AppContextValue {
-  theme: ThemeId
-  setTheme: (t: ThemeId) => void
+  palette: PaletteId
+  paletteReady: boolean
+  confirmPalette: (palette: PaletteId) => void
+  reopenPalettePicker: () => void
   soundOn: boolean
   toggleSound: () => void
   reducedMotion: boolean
@@ -31,7 +44,9 @@ interface AppContextValue {
 const AppContext = createContext<AppContextValue | null>(null)
 
 export function AppProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeId>('dark')
+  const storedOnMount = readStoredPalette()
+  const [palette, setPalette] = useState<PaletteId>(storedOnMount ?? 'crimson')
+  const [paletteReady, setPaletteReady] = useState(Boolean(storedOnMount))
   const [soundOn, setSoundOn] = useState(false)
   const [loading, setLoading] = useState(true)
   const [matrixMode, setMatrixMode] = useState(false)
@@ -50,18 +65,29 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setLogs((prev) => [...prev.slice(-49), line])
   }, [])
 
-  const setTheme = useCallback(
-    (t: ThemeId) => {
-      setThemeState(t)
-      document.documentElement.setAttribute('data-theme', t)
-      addLog(`Theme switched: ${t}`)
+  const applyPalette = useCallback((next: PaletteId) => {
+    setPalette(next)
+    document.documentElement.setAttribute('data-theme', next)
+  }, [])
+
+  const confirmPalette = useCallback(
+    (next: PaletteId) => {
+      applyPalette(next)
+      localStorage.setItem(PALETTE_STORAGE_KEY, next)
+      setPaletteReady(true)
+      addLog(`Color palette applied: ${next}`)
     },
-    [addLog],
+    [addLog, applyPalette],
   )
 
+  const reopenPalettePicker = useCallback(() => {
+    setPaletteReady(false)
+    addLog('Palette picker reopened')
+  }, [addLog])
+
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
+    document.documentElement.setAttribute('data-theme', palette)
+  }, [palette])
 
   const playClick = useCallback(() => {
     if (!soundOn || reducedMotion) return
@@ -90,8 +116,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo(
     () => ({
-      theme,
-      setTheme,
+      palette,
+      paletteReady,
+      confirmPalette,
+      reopenPalettePicker,
       soundOn,
       toggleSound,
       reducedMotion,
@@ -108,8 +136,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
       playClick,
     }),
     [
-      theme,
-      setTheme,
+      palette,
+      paletteReady,
+      confirmPalette,
+      reopenPalettePicker,
       soundOn,
       toggleSound,
       reducedMotion,

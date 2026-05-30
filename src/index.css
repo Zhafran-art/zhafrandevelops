@@ -7,53 +7,43 @@
 }
 
 :root,
-[data-theme='dark'] {
+[data-theme='crimson'] {
   --bg: #1f0b12;
   --bg-elevated: #2a1018;
   --bg-card: rgba(36, 14, 22, 0.78);
-
-  /* Ultra bright readable text */
   --text: #ffffff;
   --text-muted: #f8ede3;
-
-  --accent: #810b38;
+  --accent: #c41e5a;
   --accent-secondary: #541a1a;
-  --accent-glow: rgba(129, 11, 56, 0.35);
-
+  --accent-glow: rgba(196, 30, 90, 0.35);
   --border: rgba(255, 255, 255, 0.14);
   --grid: rgba(255, 255, 255, 0.05);
 }
 
-[data-theme='darker'] {
-  --bg: #14070b;
-  --bg-elevated: #1c0b10;
-  --bg-card: rgba(20, 7, 11, 0.85);
-
+[data-theme='emerald'] {
+  --bg: #0b1a14;
+  --bg-elevated: #0f241c;
+  --bg-card: rgba(12, 36, 28, 0.78);
   --text: #ffffff;
-  --text-muted: #f5e7da;
-
-  --accent: #810b38;
-  --accent-secondary: #541a1a;
-  --accent-glow: rgba(129, 11, 56, 0.28);
-
-  --border: rgba(255, 255, 255, 0.1);
-  --grid: rgba(255, 255, 255, 0.03);
+  --text-muted: #d1fae5;
+  --accent: #10b981;
+  --accent-secondary: #064e3b;
+  --accent-glow: rgba(16, 185, 129, 0.32);
+  --border: rgba(255, 255, 255, 0.12);
+  --grid: rgba(255, 255, 255, 0.04);
 }
 
-[data-theme='retro'] {
-  --bg: #241012;
-  --bg-elevated: #311416;
-  --bg-card: rgba(49, 20, 22, 0.82);
-
+[data-theme='violet'] {
+  --bg: #140b1f;
+  --bg-elevated: #1c1030;
+  --bg-card: rgba(28, 16, 48, 0.8);
   --text: #ffffff;
-  --text-muted: #ffeede;
-
-  --accent: #810b38;
-  --accent-secondary: #541a1a;
-  --accent-glow: rgba(129, 11, 56, 0.3);
-
-  --border: rgba(255, 255, 255, 0.16);
-  --grid: rgba(255, 255, 255, 0.06);
+  --text-muted: #ede9fe;
+  --accent: #a78bfa;
+  --accent-secondary: #5b21b6;
+  --accent-glow: rgba(167, 139, 250, 0.35);
+  --border: rgba(255, 255, 255, 0.14);
+  --grid: rgba(255, 255, 255, 0.05);
 }
 
 * {
@@ -149,16 +139,9 @@ body::after {
   font-size: 0.7rem;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-
-  background: rgba(129, 11, 56, 0.1);
-  border: 1px solid rgba(129, 11, 56, 0.25);
-
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
   color: var(--accent);
-}
-
-[data-theme='retro'] .tech-tag {
-  background: rgba(84, 26, 26, 0.18);
-  border-color: rgba(241, 226, 209, 0.18);
 }
 
 .section-padding {

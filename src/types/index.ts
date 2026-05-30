@@ -1,4 +1,4 @@
-export type ThemeId = 'dark' | 'darker' | 'retro'
+export type PaletteId = 'crimson' | 'emerald' | 'violet'
 
 export interface Profile {
   name: string

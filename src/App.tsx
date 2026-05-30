@@ -4,6 +4,7 @@ import { useLenisScroll } from '@/hooks/useLenisScroll'
 import { useKonami } from '@/hooks/useKonami'
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
 import { LoadingScreen } from '@/components/layout/LoadingScreen'
+import { PalettePickerModal } from '@/components/ui/PalettePickerModal'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { DevToolsPanel } from '@/components/layout/DevToolsPanel'
@@ -18,7 +19,8 @@ import { CertificatesSection } from '@/components/certificates/CertificatesSecti
 import { ContactSection } from '@/components/contact/ContactSection'
 
 function PortfolioContent() {
-  const { loading, addLog } = useApp()
+  const { loading, paletteReady, addLog } = useApp()
+  const showChrome = !loading && paletteReady
   useLenisScroll()
   useKonami()
   useKeyboardShortcuts()
@@ -30,23 +32,29 @@ function PortfolioContent() {
   return (
     <>
       <LoadingScreen />
+      <PalettePickerModal />
       <a href="#hero" className="skip-link">
         Skip to content
       </a>
-      {!loading && <Navbar />}
-      <main>
-        <HeroSection />
-        <AboutSection />
-        <StudySection />
-        <ProjectsSection />
-        <CertificatesSection />
-        <ContactSection />
-      </main>
-      <Footer />
-      <CursorTrail />
-      <DevToolsPanel />
-      <ShortcutHelp />
-      <MatrixRain />
+      <div
+        className={showChrome ? undefined : 'opacity-0 pointer-events-none fixed -z-10'}
+        aria-hidden={!showChrome}
+      >
+        {showChrome && <Navbar />}
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <StudySection />
+          <ProjectsSection />
+          <CertificatesSection />
+          <ContactSection />
+        </main>
+        <Footer />
+        <CursorTrail />
+        <DevToolsPanel />
+        <ShortcutHelp />
+        <MatrixRain />
+      </div>
     </>
   )
 }
