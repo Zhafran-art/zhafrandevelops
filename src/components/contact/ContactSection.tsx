@@ -42,7 +42,8 @@ export function ContactSection() {
       <div className="section-reveal grid lg:grid-cols-2 gap-10">
         <div className="space-y-6">
           <p className="text-[var(--text-muted)] leading-relaxed">
-            Open to collaborations, internships, and interesting projects. Reach out via email or the form.
+            Open to collaborations, internship opportunities, and innovative projects where I can contribute, learn, and create meaningful solutions. As a Full-Stack Engineer, I enjoy building scalable applications, crafting seamless user experiences, and solving complex technical challenges across both frontend and backend development. I’m always interested in connecting with professionals, startups, and organizations that value technology-driven innovation. Whether it's developing web applications, contributing to software products, or collaborating on ambitious ideas, I’m eager to bring value and grow alongside talented teams. Feel free to reach out via email—I'd be happy to discuss opportunities, exchange ideas, and explore how we can build something great together.
+
           </p>
           <div className="flex flex-wrap gap-3">
             <MagneticButton variant="outline" href={data.socials.email} className="gap-2">
@@ -99,7 +100,7 @@ export function ContactSection() {
             {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
           </div>
           <MagneticButton variant="primary" type="submit" className="w-full">
-            Send message
+            A Work In Progress
           </MagneticButton>
         </form>
       </div>
