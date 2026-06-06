@@ -8,16 +8,18 @@
     "modules": [
       { "name": "Web Fundamentals", "completed": true },
       { "name": "JavaScript & DOM", "completed": true },
-      { "name": "React & SPA Architecture", "completed": false },
-      { "name": "UI/UX & Prototyping", "completed": false },
-      { "name": "Game Development Basics", "completed": false }
+      { "name": "React.Js Implementation ", "completed": true },
+      { "name": "UI/UX & Prototyping", "completed": true },
+      { "name": "MySQL Database", "completed": false },
+      { "name": "Game Development Basics", "completed": false },
+      { "name": "Real Life LMS Project System", "completed": false }
     ],
     "semesterGoals": [
-      "Ship 2 portfolio-grade web projects",
-      "Complete React module with state management patterns",
-      "Design and prototype a game UI in Figma"
+      "Complete remaking my Portfolio using React.Js",
+      "Complete Programmer Roadmaps",
+      "Complete UI/UX & Prototyping for LMS module with Figma"
     ],
-    "syllabusTopics": ["HTML/CSS", "JavaScript ES6+", "React", "REST APIs", "Figma", "Unity basics"]
+    "syllabusTopics": ["HTML/CSS", "JavaScript", "React.js", "MySQL Database", "Figma", "Unity basics", "Google Firebase", "REST APIs", "API Integration"]
   },
   "timeline": [
     {

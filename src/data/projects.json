@@ -75,7 +75,7 @@
       "category": "School",
       "demo": "https://e-report-six.vercel.app",
       "repo": "https://github.com/Zhafran-art/E-report",
-      "thumbnail": "/placeholders/IDNReport.png",
+      "thumbnail": "/placeholders/E-Report.png",
       "featured": false,
       "challenges": "The challenge that i faced when creating IDN Report was a software issue since it was my first ever project using both Tailwind and Bootstrap, Since i was natively using CSS more and this was a first, So i had to undestand more about Tailwind and Bootstrap.",
       "learnings": "But from that challenge, I have obtained new skills on the way, Such as both Bootstrap and Tailwind, Now i can more flexibly use CSS in a more interactive and animated way, And from this project i also learned of the countless animations these softwares both have, Such as Fade-In or Fade-Out, Pop-In or Pop-out, And etcetera."
@@ -83,13 +83,27 @@
     {
       "id": "IDN Cart",
       "name": "IDN Cart",
+      "description": "A digital school store created by students to showcase items like Amazon",
+      "longDescription": "This website is a digital school store run by students, for everyone. We offer a new experience for purchasing items like Amazon within the school environment—fast, convenient, and modern—through a web-based system, It not only gives a positive impact, But also fills your items to the core.",
+      "tech": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      "category": "School",
+      "demo": "https://zhafran-art.github.io/idn-cart/",
+      "repo": "https://github.com/Zhafran-art/idn-cart",
+      "thumbnail": "/placeholders/IDNCart.png",
+      "featured": false,
+      "challenges": "The challenge I faced when creating IDN Canteen was a technical issue, since it was my first project using both Tailwind and Bootstrap. I was originally more comfortable with plain CSS, so I had to learn how Tailwind and Bootstrap worked together.",
+      "learnings": "What I learned from creating IDN Canteen was how to adapt to new tools quickly, since it was my first time combining Tailwind and Bootstrap in one project. I was used to writing custom CSS, so this taught me to work more efficiently with utility-first frameworks and component libraries."
+    },
+    {
+      "id": "IDN Canteen",
+      "name": "IDN Canteen",
       "description": "A digital school canteen created by students to showcase their menus",
       "longDescription": "This website is a digital school canteen run by students, for students. We offer a new experience for purchasing food and drinks within the school environment—fast, convenient, and modern—through a web-based system, It not only gives a positive impact, But also fills the stomach to the core.",
       "tech": ["HTML", "CSS", "JavaScript", "Bootstrap"],
       "category": "School",
       "demo": "https://idn-cafe.vercel.app",
-      "repo": "https://github.com/Zhafran-art/idn-cart",
-      "thumbnail": "/placeholders/IDNCart.png",
+      "repo": "",
+      "thumbnail": "/placeholders/IDNCanteen.png",
       "featured": false,
       "challenges": "The challenge I faced when creating IDN Canteen was a technical issue, since it was my first project using both Tailwind and Bootstrap. I was originally more comfortable with plain CSS, so I had to learn how Tailwind and Bootstrap worked together.",
       "learnings": "What I learned from creating IDN Canteen was how to adapt to new tools quickly, since it was my first time combining Tailwind and Bootstrap in one project. I was used to writing custom CSS, so this taught me to work more efficiently with utility-first frameworks and component libraries."
