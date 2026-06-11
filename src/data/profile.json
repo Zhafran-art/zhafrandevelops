@@ -5,9 +5,17 @@
   "tagline": "Building interactive experiences at the intersection of code, design, and play.",
   "location": "Bekasi, Indonesia",
   "email": "zisbest2010@gmail.com",
+  "phone": "+62 852-1820-3696",
   "cvPath": "/cv.pdf",
   "avatar": "/photos/Me.png",
   "avatarPlaceholder": "/placeholders/avatar-placeholder.svg",
+  "carouselPhotos": [
+    "/photos/Me.png",
+    "/photos/Me-2.png",
+    "/photos/Me-3.png",
+    "/photos/Me-4.png",
+    "/photos/Me-5.png"
+  ],
   "socials": {
     "github": "https://github.com/Zhafran-art",
     "linkedin": "https://www.linkedin.com/in/athallazhafran01/",

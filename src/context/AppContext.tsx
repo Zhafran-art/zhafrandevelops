@@ -46,7 +46,7 @@ const AppContext = createContext<AppContextValue | null>(null)
 export function AppProvider({ children }: { children: ReactNode }) {
   const storedOnMount = readStoredPalette()
   const [palette, setPalette] = useState<PaletteId>(storedOnMount ?? 'crimson')
-  const [paletteReady, setPaletteReady] = useState(Boolean(storedOnMount))
+  const [paletteReady, setPaletteReady] = useState(false)
   const [soundOn, setSoundOn] = useState(false)
   const [loading, setLoading] = useState(true)
   const [matrixMode, setMatrixMode] = useState(false)

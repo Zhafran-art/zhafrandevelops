@@ -1,18 +1,23 @@
 import profile from '@/data/profile.json'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { TerminalWidget } from '@/components/about/TerminalWidget'
-import { SkillsBars } from '@/components/about/SkillsBars'
+import { SkillsLogos } from '@/components/about/SkillsLogos'
 import type { Profile } from '@/types'
 
 const data = profile as Profile
 
 export function AboutSection() {
   return (
-    <SectionWrapper id="about" title="About Me" subtitle="Who I am and what I bring to the table.">
+    <SectionWrapper
+      id="about"
+      title="Who I Am"
+      subtitle="Who I am and what I bring to the table."
+      centered
+    >
       <div className="grid lg:grid-cols-2 gap-12">
         <div className="section-reveal space-y-6">
           <p className="text-[var(--text-muted)] leading-relaxed text-lg">{data.bio}</p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2">
             {['Full-Stack', 'UI/UX', 'React', 'Figma', 'Game Dev'].map((chip) => (
               <span
                 key={chip}
@@ -29,8 +34,8 @@ export function AboutSection() {
       </div>
 
       <div className="mt-16 section-reveal">
-        <h3 className="font-display text-2xl font-semibold mb-8">Skills & Proficiency</h3>
-        <SkillsBars />
+        <h3 className="font-display text-2xl font-semibold mb-8 text-center">Skills</h3>
+        <SkillsLogos />
       </div>
     </SectionWrapper>
   )

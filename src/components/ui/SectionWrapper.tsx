@@ -11,9 +11,17 @@ interface SectionWrapperProps {
   subtitle?: string
   children: ReactNode
   className?: string
+  centered?: boolean
 }
 
-export function SectionWrapper({ id, title, subtitle, children, className = '' }: SectionWrapperProps) {
+export function SectionWrapper({
+  id,
+  title,
+  subtitle,
+  children,
+  className = '',
+  centered = false,
+}: SectionWrapperProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const { reducedMotion, addLog } = useApp()
 
@@ -47,7 +55,7 @@ export function SectionWrapper({ id, title, subtitle, children, className = '' }
       className={`section-padding scroll-mt-24 ${className}`}
       aria-labelledby={`${id}-heading`}
     >
-      <header className="mb-12 md:mb-16">
+      <header className={`mb-12 md:mb-16 ${centered ? 'text-center' : ''}`}>
         <p className="section-reveal font-mono text-sm text-[var(--accent)] mb-2">
           {'// '}
           {id}
@@ -59,7 +67,13 @@ export function SectionWrapper({ id, title, subtitle, children, className = '' }
           {title}
         </h2>
         {subtitle && (
-          <p className="section-reveal mt-3 text-[var(--text-muted)] max-w-2xl text-lg">{subtitle}</p>
+          <p
+            className={`section-reveal mt-3 text-[var(--text-muted)] max-w-2xl text-lg ${
+              centered ? 'mx-auto' : ''
+            }`}
+          >
+            {subtitle}
+          </p>
         )}
       </header>
       {children}

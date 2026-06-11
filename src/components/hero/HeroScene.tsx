@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
-import { motion, useSpring, useTransform } from 'framer-motion'
-import { User } from 'lucide-react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion, useSpring, useTransform } from 'framer-motion'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import profile from '@/data/profile.json'
 import { useApp } from '@/context/AppContext'
 import { assetUrl } from '@/lib/assetUrl'
@@ -8,10 +8,12 @@ import type { Profile } from '@/types'
 
 const data = profile as Profile
 
+const CAROUSEL_INTERVAL_MS = 4500
+
 export function HeroScene() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [imageSrc, setImageSrc] = useState(assetUrl(data.avatarPlaceholder))
-  const [showPhotoHint, setShowPhotoHint] = useState(true)
+  const [slides, setSlides] = useState<string[]>([])
+  const [activeIndex, setActiveIndex] = useState(0)
   const { reducedMotion } = useApp()
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
 
@@ -20,14 +22,60 @@ export function HeroScene() {
   const glowX = useTransform(rotateY, (v) => `${v * 8}px`)
   const glowY = useTransform(rotateX, (v) => `${v * -8}px`)
 
+  const photoPaths =
+    data.carouselPhotos?.length ? data.carouselPhotos : [data.avatar, data.avatarPlaceholder]
+
   useEffect(() => {
-    const img = new Image()
-    img.onload = () => {
-      setImageSrc(assetUrl(data.avatar))
-      setShowPhotoHint(false)
+    let cancelled = false
+
+    const loadSlides = async () => {
+      const loaded: string[] = []
+
+      await Promise.all(
+        photoPaths.map(
+          (path) =>
+            new Promise<void>((resolve) => {
+              const img = new Image()
+              img.onload = () => {
+                if (!cancelled) loaded.push(assetUrl(path))
+                resolve()
+              }
+              img.onerror = () => resolve()
+              img.src = assetUrl(path)
+            }),
+        ),
+      )
+
+      if (!cancelled) {
+        setSlides(
+          loaded.length > 0 ? loaded : [assetUrl(data.avatarPlaceholder)],
+        )
+        setActiveIndex(0)
+      }
     }
-    img.src = assetUrl(data.avatar)
+
+    loadSlides()
+    return () => {
+      cancelled = true
+    }
   }, [])
+
+  const goTo = useCallback(
+    (index: number) => {
+      if (slides.length === 0) return
+      setActiveIndex((index + slides.length) % slides.length)
+    },
+    [slides.length],
+  )
+
+  const goNext = useCallback(() => goTo(activeIndex + 1), [activeIndex, goTo])
+  const goPrev = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo])
+
+  useEffect(() => {
+    if (reducedMotion || slides.length <= 1) return
+    const timer = window.setInterval(goNext, CAROUSEL_INTERVAL_MS)
+    return () => window.clearInterval(timer)
+  }, [goNext, reducedMotion, slides.length])
 
   const onPointerMove = (e: React.PointerEvent) => {
     if (reducedMotion || isMobile || !containerRef.current) return
@@ -43,10 +91,12 @@ export function HeroScene() {
     rotateY.set(0)
   }
 
+  const currentSlide = slides[activeIndex] ?? assetUrl(data.avatarPlaceholder)
+
   return (
     <motion.div
       ref={containerRef}
-      className="relative w-full min-h-[320px] md:min-h-[420px] flex items-center justify-center perspective-[1200px]"
+      className="relative w-full max-w-md mx-auto min-h-[320px] md:min-h-[420px] flex items-center justify-center perspective-[1200px]"
       onPointerMove={onPointerMove}
       onPointerLeave={onPointerLeave}
       initial={{ opacity: 0, y: 24 }}
@@ -90,11 +140,18 @@ export function HeroScene() {
             '0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.04) inset',
         }}
       >
-        <img
-          src={imageSrc}
-          alt={`Portrait of ${data.shortName}`}
-          className="absolute inset-0 h-full w-full object-cover object-top"
-        />
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={currentSlide}
+            src={currentSlide}
+            alt={`Portrait of ${data.shortName}`}
+            className="absolute inset-0 h-full w-full object-cover object-top"
+            initial={reducedMotion ? false : { opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={reducedMotion ? undefined : { opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.45 }}
+          />
+        </AnimatePresence>
 
         <motion.div
           className="absolute inset-0 pointer-events-none"
@@ -113,19 +170,44 @@ export function HeroScene() {
           aria-hidden
         />
 
-        {showPhotoHint && (
-          <div className="absolute inset-0 flex flex-col items-center justify-end pb-8 px-6 text-center pointer-events-none">
-            <div className="mb-3 rounded-full border border-[var(--accent)]/30 bg-[var(--bg)]/60 p-3 backdrop-blur-sm">
-              <User className="text-[var(--accent)]" size={28} aria-hidden />
+        {slides.length > 1 && (
+          <>
+            <button
+              type="button"
+              onClick={goPrev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full glass p-2 text-[var(--text)] opacity-0 group-hover:opacity-100 hover:text-[var(--accent)] transition-all"
+              aria-label="Previous photo"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              type="button"
+              onClick={goNext}
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full glass p-2 text-[var(--text)] opacity-0 group-hover:opacity-100 hover:text-[var(--accent)] transition-all"
+              aria-label="Next photo"
+            >
+              <ChevronRight size={18} />
+            </button>
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => goTo(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === activeIndex
+                      ? 'w-6 bg-[var(--accent)]'
+                      : 'w-2 bg-white/40 hover:bg-white/70'
+                  }`}
+                  aria-label={`Go to photo ${index + 1}`}
+                  aria-current={index === activeIndex}
+                />
+              ))}
             </div>
-            <p className="font-mono text-xs text-[var(--text-muted)] max-w-[14rem] leading-relaxed">
-              Add your photo at{' '}
-              <span className="text-[var(--accent)]">public/photos/Me.png</span>
-            </p>
-          </div>
+          </>
         )}
 
-        <figcaption className="sr-only">Profile portrait</figcaption>
+        <figcaption className="sr-only">Profile photo carousel</figcaption>
       </motion.figure>
 
       <div

@@ -45,8 +45,8 @@ export function PalettePickerModal() {
               Select Main Color-Palette
             </h2>
             <p className="mt-2 text-sm text-[var(--text-muted)] max-w-xl">
-              Choose how the portfolio should feel. You can change this anytime from the palette
-              button in the navigation bar.
+              Pick a palette to set the mood for this visit. You&apos;ll choose again next time you
+              open the site — or switch anytime from the palette button in the nav.
             </p>
 
             <ul className="mt-8 grid gap-4 sm:grid-cols-3">

@@ -7,9 +7,11 @@ export interface Profile {
   tagline: string
   location: string
   email: string
+  phone?: string
   cvPath: string
   avatar: string
   avatarPlaceholder: string
+  carouselPhotos?: string[]
   socials: { github: string; linkedin: string; email: string }
   bio: string
   terminalLines: string[]
