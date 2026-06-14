@@ -1,4 +1,4 @@
-export type PaletteId = 'crimson' | 'emerald' | 'violet'
+export type PaletteId = 'crimson' | 'emerald' | 'violet' | 'sunshine' | 'pink-dream' | 'cyber-grid'
 
 export interface Profile {
   name: string

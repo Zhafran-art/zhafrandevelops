@@ -26,6 +26,24 @@ export const PALETTE_OPTIONS: PaletteOption[] = [
     description: 'Cosmic purples and indigo glow — creative and bold.',
     preview: ['#7c3aed', '#4c1d95', '#140b1f'],
   },
+  {
+    id: 'sunshine',
+    name: 'Sunshine',
+    description: 'Warm golden rays fade into a dusky sunset - the salty breeze is a reminder why to stay alive',
+    preview: ['#f4d35e', '#ee964b', '#241b08'],
+  },
+  {
+    id: 'pink-dream',
+    name: 'Dream',
+    description: 'A cherry blossomed symphony combining professionalism - sweet like cherry',
+    preview: ['#fff7fb', '#ff6fb5', '#ff9ecf'],
+  },
+  {
+    id: 'cyber-grid',
+    name: 'Cyber Grid',
+    description: 'Neon lights cut through the darkness of a digital metropolis - like something lost in a glitch',
+    preview: ['#00d9ff', '#ff9f1c', '#0f1728'],
+  },
 ]
 
 export const PALETTE_STORAGE_KEY = 'portfolio-palette'

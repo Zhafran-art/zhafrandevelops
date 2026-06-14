@@ -4,6 +4,16 @@
     { "name": "CSS", "level": 9, "category": "frontend" },
     { "name": "JavaScript", "level": 7, "category": "frontend" },
     { "name": "React.js", "level": 5, "category": "frontend" },
-    { "name": "Figma", "level": 8, "category": "design" }
+    { "name": "Figma", "level": 8, "category": "design" },
+    { "name": "Bootstrap", "level": 8, "category": "frontend" },
+    { "name": "Tailwind", "level": 8, "category": "frontend" },
+    { "name": "MySQL", "level": 8, "category": "backend" },
+    { "name": "Firebase", "level": 8, "category": "backend" },
+    { "name": "Canva", "level": 8, "category": "design" },
+    { "name": "Tailwind", "level": 8, "category": "frontend" },
+    { "name": "Unreal Engine", "level": 8, "category": "game development" },
+    { "name": "Blender", "level": 8, "category": "design" },
+    { "name": "Unity", "level": 8, "category": "game development" },
+    { "name": "TypeScript", "level": 8, "category": "frontend" }
   ]
 }

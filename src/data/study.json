@@ -3,23 +3,27 @@
     "institution": "SMK Skill Village Islamic School",
     "program": "Software and Game Development",
     "focusAreas": ["Full-Stack Development", "UI/UX Design", "React", "Game Logic"],
-    "expectedCompletion": "2025",
-    "progress": 72,
+    "expectedCompletion": "2028",
+    "progress": 37,
     "modules": [
       { "name": "Web Fundamentals", "completed": true },
-      { "name": "JavaScript & DOM", "completed": true },
-      { "name": "React.Js Implementation ", "completed": true },
+      { "name": "HTML, CSS, & JavaScript", "completed": true },
+      { "name": "Frontend Frameworks & Libraries", "completed": true },
+      { "name": "Backend Development & Databases", "completed": true },
+      { "name": "Version Control & Collaboration", "completed": true },
       { "name": "UI/UX & Prototyping", "completed": true },
-      { "name": "MySQL Database", "completed": false },
-      { "name": "Game Development Basics", "completed": false },
-      { "name": "Real Life LMS Project System", "completed": false }
+      { "name": "Application Development", "completed": false },
+      { "name": "Game Development Fundamentals (Design, Programming, Tools, AI)", "completed": false },
+      { "name": "Game Animation (Physics, Audio, Animation, Testing & Optimization)", "completed": false }
     ],
     "semesterGoals": [
-      "Complete remaking my Portfolio using React.Js",
-      "Complete Programmer Roadmaps",
+      "Complete remake of my Portfolio using more advanced Frontend tools",
+      "Complete Programmer Related Roadmaps",
+      "Study a more in depth research about UI/UX Design",
+      "Undergo a paid internship as one of my semester goals",
       "Complete UI/UX & Prototyping for LMS module with Figma"
     ],
-    "syllabusTopics": ["HTML/CSS", "JavaScript", "React.js", "MySQL Database", "Figma", "Unity basics", "Google Firebase", "REST APIs", "API Integration"]
+    "syllabusTopics": ["HTML/CSS", "JavaScript", "React.js", "MySQL Database", "Figma", "Unity basics", "Google Firebase", "REST APIs", "API Integration", "TypeScript"]
   },
   "timeline": [
     {
