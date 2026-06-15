@@ -10,7 +10,7 @@
     { "name": "MySQL", "level": 8, "category": "backend" },
     { "name": "Firebase", "level": 8, "category": "backend" },
     { "name": "Canva", "level": 8, "category": "design" },
-    { "name": "Tailwind", "level": 8, "category": "frontend" },
+    { "name": "PHP", "level": 8, "category": "backend" },
     { "name": "Unreal Engine", "level": 8, "category": "game development" },
     { "name": "Blender", "level": 8, "category": "design" },
     { "name": "Unity", "level": 8, "category": "game development" },
